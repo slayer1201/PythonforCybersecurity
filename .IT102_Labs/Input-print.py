@@ -3,5 +3,7 @@
 your_name = input("What is your name? ")
 print("Hello {0}".format(your_name))
 print("Today is going to be a great day!")
-your_age = input("What is your age? ")
-print("In 2 years you will be {0}".format(your_name+2))
+# Age Question +2
+your_age = int(input("What is your age? "))
+your_age = your_age+2
+print("In 2 years, you will be:", your_age, "years old.")
