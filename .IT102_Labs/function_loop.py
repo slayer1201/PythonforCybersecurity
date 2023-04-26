@@ -1,6 +1,4 @@
-# Work Area
-# Created by John Mahoney, 4/26/2023
-
+#Loop Function
 def send_message(message):
     for i in range(10):
         print(message)
