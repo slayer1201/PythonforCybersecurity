@@ -6,3 +6,5 @@ if good_day == "y" or good_day == "yes":
 else:
     for i in range(10):
         print("I guess its not")
+
+        
