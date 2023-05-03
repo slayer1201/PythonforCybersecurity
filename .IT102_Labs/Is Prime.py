@@ -1,5 +1,3 @@
-# Work Area
-# Created by John Mahoney, 4/26/2023
 
 def is_prime_number(number):
     if number < 2:
