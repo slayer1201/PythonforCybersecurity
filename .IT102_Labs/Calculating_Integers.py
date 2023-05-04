@@ -29,3 +29,10 @@ b = 3
 c = 2
 print(b % c)
 # Prints "1"
+
+def add_num(num_1 = 10):
+    print(num_1 + num_1)
+
+add_num()
+add_num(5)
+# Prints 20, 10
