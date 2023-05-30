@@ -4,13 +4,14 @@ import json
 import tkinter as tk
 from tkinter import filedialog
 
-# Read the INI file
+# INI file
 config = ConfigParser()
 config.read(r"C:\Users\Mahoney\OneDrive\.Programing\GitHub\PythonforCybersecurity\.IT102_Labs\TestSecrets.ini")
 
 # Get the access token from the INI file
 access_token = config.get("APIKeys", "Canvas")
 
+# Patch Devide test
 base_url = "https://canvas.instructure.com/api/v1"
 api_path = "/courses"
 url = base_url + api_path
@@ -48,6 +49,7 @@ try:
                     file.write(course_code + "\n")
 
         print("Course codes saved to", file_path)
+    # Error Handling
     else:
         print("Failed to retrieve courses list. Status code:", response.status_code)
 except requests.exceptions.RequestException as e:
