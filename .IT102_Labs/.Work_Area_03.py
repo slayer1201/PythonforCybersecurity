@@ -28,11 +28,8 @@ try:
     if response.status_code == 200:
         response_data = json.loads(response.content)
 
-        # Extract the course_code for each course and print it
-        for course in response_data:
-            if "course_code" in course:
-                course_code = course["course_code"]
-                print(course_code)
+        # Extract the course_code for each course
+        course_codes = [course["course_code"] for course in response_data]
 
         # Prompt for file path using dialog box
         root = tk.Tk()
@@ -42,10 +39,8 @@ try:
 
         # Save the course codes to the file
         with open(file_path, "w") as file:
-            for course in response_data:
-                if "course_code" in course:
-                    course_code = course["course_code"]
-                    file.write(course_code + "\n")
+            for code in course_codes:
+                file.write(code + "\n")
 
         print("Course codes saved to", file_path)
     else:
