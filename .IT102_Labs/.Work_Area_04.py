@@ -19,7 +19,7 @@ def create_sha1 (plain_text):
     digest = result.hexdigest()
     return digest
 
-password = input("What password do you want to test") or "qwerty"
+password = input("What password do you want to test: ") or "qwerty"
 
 pass_hash = create_sha1(password)
 pass_hash = pass_hash.upper()
@@ -30,8 +30,9 @@ hash_postfix = pass_hash[5:]
 password_dictionary = check_pwnedpasswords(hash_prefix)
 
 if hash_postfix in password_dictionary:
-    print("Password has been compromised. It has been found this many times: ")
-    print (password_dictionary [hash_postfix])
+    print(password + " has been compromised. It has been found this many times: ")
+    print(password_dictionary[hash_postfix])
 else:
-    print("Password Look Secure!")
+    print(password + " Look Secure!")
+
 
